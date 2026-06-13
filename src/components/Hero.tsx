@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { SITE } from "@/content/site";
-import HeroScene from "./HeroScene";
 import Divider from "./dividers";
 
 function ArrowIcon() {
@@ -62,9 +61,7 @@ export default function Hero() {
           </video>
           <div style={{ position: "absolute", inset: 0, background: "color-mix(in oklab, var(--bg) 30%, transparent)" }} />
         </>
-      ) : (
-        <HeroScene />
-      )}
+      ) : null}
 
       <div
         className="container"

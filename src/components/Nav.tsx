@@ -17,6 +17,7 @@ export default function Nav() {
 
   return (
     <nav
+      className="site-nav"
       style={{
         position: "fixed",
         top: 0, left: 0, right: 0,
@@ -99,22 +100,28 @@ export default function Nav() {
           Book a table
         </a>
 
-        {/* hamburger (mobile) */}
+        {/* hamburger (mobile) — a clearly visible pill button */}
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           className="nav-burger"
           onClick={() => setOpen((o) => !o)}
           style={{
             display: "none",
-            background: "transparent",
-            border: "none",
-            padding: 8,
+            alignItems: "center",
+            justifyContent: "center",
+            width: 44,
+            height: 44,
+            background: "var(--bg)",
+            border: "1px solid var(--line)",
+            borderRadius: 12,
+            padding: 0,
             cursor: "pointer",
+            boxShadow: "0 2px 10px color-mix(in oklab, var(--ink) 12%, transparent)",
           }}
         >
-          <svg width="26" height="20" viewBox="0 0 26 20" fill="none">
+          <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
             <path
-              d={open ? "M3 3 L23 17 M23 3 L3 17" : "M2 4 H24 M2 10 H24 M2 16 H24"}
+              d={open ? "M3 3 L19 13 M19 3 L3 13" : "M2 3 H20 M2 8 H20 M2 13 H20"}
               stroke="var(--ink)"
               strokeWidth="2"
               strokeLinecap="round"
@@ -158,6 +165,12 @@ export default function Nav() {
           .nav-links { display: none !important; }
           .nav-cta   { display: none !important; }
           .nav-burger { display: inline-flex !important; }
+          .site-nav {
+            background: color-mix(in oklab, var(--bg) 92%, transparent) !important;
+            backdrop-filter: blur(10px) saturate(140%) !important;
+            -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+            border-bottom: 1px solid var(--line) !important;
+          }
         }
       `}</style>
     </nav>
