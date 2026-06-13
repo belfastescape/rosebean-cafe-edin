@@ -42,6 +42,7 @@ const fontVars = [
 export const metadata: Metadata = {
   title: SITE.meta.title,
   description: SITE.meta.description,
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
